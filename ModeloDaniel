@@ -1,0 +1,38 @@
+Proceso Daniel
+	definir tabla como cadena;
+	definir precio, acumPrecio,mediaPrecio como real;
+	definir codigo, unidades,i ,j, acumUni como entero;
+	dimension tabla[6,3];
+	tabla[0,0]<-"Codigo";
+	tabla[0,1]<-"Unidades";
+	tabla[0,2]<-"Precio";
+	acumUni<-0;
+	acumPrecio<-0;
+	para i<-1 hasta 5  con paso 1 Hacer
+			Escribir "Digame el codigo de articulo";
+			leer codigo;
+			Escribir "Digame las unidades del producto";
+			leer unidades;
+			acumUni<- acumUni+unidades;
+			Escribir "Digame el precio el producto";
+			leer precio;
+			acumPrecio<-precio+acumPrecio;
+			tabla[i,0]<-ConvertirATexto(codigo);
+			tabla[i,1]<-ConvertirATexto(unidades);
+			tabla[i,2]<- ConvertirATexto(trunc(precio*100)/100);
+			
+	FinPara
+		Escribir "=========================================";
+		Escribir "El total de unidades es: ", acumUni;
+		mediaPrecio<- acumPrecio/5;
+		Escribir "La media del precio es: ", mediaPrecio;
+		Escribir "===========================================";
+	para i<-0 hasta 5 Hacer
+		para j<-0 hasta 2 Hacer
+			Escribir sin saltar tabla[i,j], " ";
+		FinPara
+		Escribir "";
+	FinPara
+	
+	
+FinProceso
